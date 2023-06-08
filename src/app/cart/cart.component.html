@@ -1,0 +1,46 @@
+
+ <div class="row">
+  <div class="col" *ngFor="let product of products">
+    <p [ngClass]="product.stock === 0 ? 'text-danger' : 'text-success'">
+      {{ product.stock === 0 ? 'Out of stock' : 'In stock' }}
+    </p>
+    <p class="lead">{{ product.price | currency:'EGP':'symbol':'1.0-0' }}</p>
+    <p>{{ product.publishedDate | date:'shortDate' }}</p>
+  </div>
+</div>
+
+<div class="mt-3" *ngIf="CartService.cart.length === 0">
+  No items in the cart, continue shopping
+</div>
+
+<table class="table mt-3" *ngIf="CartService.cart.length > 0">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of CartService.cart">
+      <td>{{ item.product.title }}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Quantity">
+          <button class="btn btn-outline-secondary" (click)="changeQuantity(item, -1)">-</button>
+          <span class="btn btn-light">{{ item.quantity }}</span>
+          <button class="btn btn-outline-secondary" (click)="changeQuantity(item, +1)">+</button>
+        </div>
+      </td>
+      <td>{{ item.product.price | currency:'EGP':'symbol':'1.0-0' }}</td>
+      <td>{{ item.totalPrice | currency:'EGP':'symbol':'1.0-0' }}</td>
+      <td><button class="btn btn-danger" (click)="deleteItem(item)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="mt-3" *ngIf="CartService.cart.length > 0">
+  Total Price:
+  <span class="lead">{{ getTotalPrice() | currency:'EGP':'symbol':'1.0-0' }}</span>
+</p>
