@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductcardComponent } from './productcard/productcard.component';
-import { ProductsComponent } from './products/products.component';
+// import { ProductsComponent } from './products/products.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CartComponent } from './cart/cart.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
@@ -25,7 +25,7 @@ import {AuthModule} from './auth/auth.module';
     NavbarComponent,
     ProductlistComponent,
     ProductcardComponent,
-     ProductsComponent,
+    //  ProductsComponent,
     ProductdetailsComponent,
     CartComponent,
     NotfoundComponent,
