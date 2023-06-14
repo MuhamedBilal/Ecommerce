@@ -5,11 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StockPipe implements PipeTransform {
 
-  transform(value: number, ...args: unknown[]): string {
+  transform(value: number): string {
     if (value === 0) {
-      return '<span style="color: red">Out of stock</span>';
+      return 'Out of stock';
     } else {
-      return '<span style="color: green">In stock</span>';
+      return 'In stock';
     }
   }
 }
+

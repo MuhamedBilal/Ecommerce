@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductcardComponent } from './productcard/productcard.component';
-// import { LoginComponent } from './auth/login/login.component';
-// import { RegisterComponent } from './auth/register/register.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CartComponent } from './cart/cart.component';
@@ -17,9 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { StockPipe } from './pipes/stock.pipe';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {AuthModule} from './auth/auth.module'
+import {AuthModule} from './auth/auth.module';
 // import { SharedModule } from './shared/shared.module';
-// import { ProductsModModule } from './products-mod/products-mod.module';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +25,7 @@ import {AuthModule} from './auth/auth.module'
     NavbarComponent,
     ProductlistComponent,
     ProductcardComponent,
-    // LoginComponent,
-    // RegisterComponent,
-    ProductsComponent,
+     ProductsComponent,
     ProductdetailsComponent,
     CartComponent,
     NotfoundComponent,
@@ -44,8 +40,6 @@ import {AuthModule} from './auth/auth.module'
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // ProductsModModule,
-    // SharedModule,
     AuthModule,
   ],
   providers: [],
