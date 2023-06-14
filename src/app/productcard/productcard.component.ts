@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
@@ -10,14 +10,11 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductcardComponent {
   @Input() product: any;
-  
   constructor(private router: Router, private CartService: CartService) {}
   
-
   addToCart(event: Event, product: any) { 
-    event.stopPropagation();
+    event.stopPropagation(); //if I didn't stop propagation, when I press add to cart it still fires the details
     this.CartService.addToCart(this.product);
-    // this.addToCartEvent.emit(this.product);
   }
 
   showDetails() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { CartService } from '../services/cart.service';
@@ -8,15 +8,12 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./productdetails.component.css']
 })
 export class ProductdetailsComponent implements OnInit {
-  @ViewChild('slideBtn', { static: false }) slideBtn!: ElementRef;
-  product: any;
+   product: any;
 
   constructor(
     private route: ActivatedRoute,
     private ProductsService: ProductsService,
     private CartService: CartService,
-    
-
     ) {}
 
   ngOnInit() {
@@ -29,6 +26,5 @@ export class ProductdetailsComponent implements OnInit {
 }
 addToCart(product: any) { 
   this.CartService.addToCart(product);
-
 }
 }

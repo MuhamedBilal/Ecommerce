@@ -1,6 +1,12 @@
-
-
   .carousel-item img {
-    height: 650px; /* adjust this value to your desired height */
+    height: 650px; 
     border-radius: 20px;
+  }
+
+  .stock-out {
+    color: red;
+  }
+  
+  .stock-in {
+    color: #5bb450;
   }

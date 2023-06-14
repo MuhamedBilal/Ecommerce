@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
-import { Product } from 'src/models/productinterface';
+// import { Product } from 'src/models/productinterface';
 
 
 @Component({
@@ -14,7 +13,6 @@ export class ProductlistComponent implements OnInit {
   products: any
   constructor(
     private ProductsService: ProductsService,
-   
     ) {
   }
 

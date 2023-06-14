@@ -23,8 +23,8 @@
             Cart ({{ CartService.cart.length }})</a>
         </li>
         <li class="nav-item">
-          <!-- <a class="nav-link disabled" *ngIf="username">{{ username }}</a> -->
-          <a class="nav-link disabled" *ngIf="userService.username$ | async as username">{{ username }}</a>
+          <a class="nav-link disabled" *ngIf="username">{{ username }}</a>
+          <!-- <a class="nav-link disabled" *ngIf="userService.username$ | async as username">{{ username }}</a> -->
           
         </li>
       </ul>

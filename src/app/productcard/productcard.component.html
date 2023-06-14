@@ -7,8 +7,7 @@
     <p class="card-text">Category: {{ product.category }}</p>
     <p class="card-text">Rate: {{ product.rating }}</p>
     <p class="card-text">Price: {{ product.price | price }}</p>
-    <!-- <p class="card-text" [innerHTML]="product.stock | stock"></p>     -->
-    <p class="card-text" [class.stock-out]="product.stock === 0" [class.stock-in]="product.stock > 0">
+     <p class="card-text" [class.stock-out]="product.stock === 0" [class.stock-in]="product.stock > 0">
       {{ product.stock | stock }}
     </p>
 
