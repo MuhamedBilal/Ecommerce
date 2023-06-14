@@ -14,21 +14,19 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  onSubmit(form : any) {
-// Retrieve data from local storage
-const userData = localStorage.getItem('registeredData');
-if (userData) {
-  const user = JSON.parse(userData);
-  // Check if form values match user data
-  if (form.value.email === user.email && form.value.password === user.password) {
-    console.log('Login successful');
-  } else {
-    this.errorMessage = 'Wrong email or password';
-  }
-} else {
-  this.errorMessage = 'No user data found';
-}
- this.userService.setUsername(form.value.email);
- localStorage.setItem('username', form.value.email);
-}
-}
+onSubmit(form: any) {
+  // Retrieve data from local storage
+  const userData = localStorage.getItem('registeredData');
+  if (userData) {
+    const user = JSON.parse(userData);
+    // Check if form values match user data
+    if (form.value.email === user.email && form.value.password === user.password) {
+      console.log('Login successful');
+      this.errorMessage = ''; // Clear error message
+    } else {
+      this.errorMessage = 'Wrong email or password';
+    }
+  } 
+  this.userService.setUsername(form.value.email);
+  localStorage.setItem('username', form.value.email);
+}}
